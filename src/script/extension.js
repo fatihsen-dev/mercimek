@@ -17,13 +17,16 @@ if (typeof window !== null) {
             send({
                 value,
             });
-            chrome.storage.sync.set({ value })
+            chrome.storage.sync.set({ value });
         });
     };
 }
 
 async function send(message) {
-    const [tab] = await chrome.tabs.query({ active: true, lastFocusedWindow: true });
+    const [tab] = await chrome.tabs.query({
+        active: true,
+        lastFocusedWindow: true,
+    });
     await chrome.tabs.sendMessage(tab.id, message);
 }
 

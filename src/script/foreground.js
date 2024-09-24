@@ -3,7 +3,7 @@ if (typeof window !== null) {
         const id = setInterval(async () => {
             if (document.querySelector(".graph-before-activity-overview")) {
                 clearInterval(id);
-                const { value } = await chrome.storage.sync.get("value")
+                const { value } = await chrome.storage.sync.get("value");
                 mercimek(value);
             }
         }, 100);
