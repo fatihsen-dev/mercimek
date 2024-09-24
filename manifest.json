@@ -1,0 +1,22 @@
+{
+    "manifest_version": 3,
+    "name": "Mercimek",
+    "description": "http://www.github.com/fatihsen-dev",
+    "version": "1.0",
+    "action": {
+        "default_popup": "src/index.html"
+    },
+    "icons": {
+        "16": "/src/assets/images/icon.png",
+        "48": "/src/assets/images/icon.png",
+        "64": "/src/assets/images/icon.png",
+        "128": "/src/assets/images/icon.png"
+    },
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "matches": ["<all_urls>"],
+            "js": ["src/script/foreground.js"]
+        }
+    ]
+}
