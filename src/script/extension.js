@@ -17,6 +17,7 @@ if (typeof window !== null) {
             send({
                 value,
             });
+            chrome.storage.sync.set({ value })
         });
     };
 }

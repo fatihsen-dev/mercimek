@@ -1,9 +1,10 @@
 if (typeof window !== null) {
     window.onload = () => {
-        const id = setInterval(() => {
+        const id = setInterval(async () => {
             if (document.querySelector(".graph-before-activity-overview")) {
                 clearInterval(id);
-                mercimek();
+                const { value } = await chrome.storage.sync.get("value")
+                mercimek(value);
             }
         }, 100);
     };

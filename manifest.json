@@ -15,8 +15,15 @@
     "content_scripts": [
         {
             "all_frames": true,
-            "matches": ["<all_urls>"],
-            "js": ["src/script/foreground.js"]
+            "matches": [
+                "https://github.com/*"
+            ],
+            "js": [
+                "src/script/foreground.js"
+            ]
         }
+    ],
+    "permissions": [
+        "storage"
     ]
 }
